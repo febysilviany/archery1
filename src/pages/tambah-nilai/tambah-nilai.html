@@ -1,0 +1,236 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Tambah Nilai</ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="tambahNilai()">
+        <ion-icon name="checkmark"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+<ion-item>
+  <ion-label>
+    Tanggal
+  </ion-label>
+  <ion-datetime displayFormat="DD-MMMM-YYYY"  type="text" [(ngModel)]="Tanggal"></ion-datetime>
+</ion-item>
+
+<ion-item>Rambahan 1</ion-item>
+<ion-grid>
+  <ion-row>
+    <ion-col>
+      <div>
+        <ion-input type="number" placeholder="1" [(ngModel)]="TotalRambahan1[0]" ></ion-input>
+      </div>
+    </ion-col>
+    <ion-col>
+      <div>
+        <ion-input type="number" placeholder="2" [(ngModel)]="TotalRambahan1[1]" ></ion-input>
+      </div>
+    </ion-col>
+    <ion-col>
+      <div>
+        <ion-input type="number" placeholder="3" [(ngModel)]="TotalRambahan1[2]" ></ion-input>
+      </div>
+    </ion-col>
+    <ion-col>
+      <div>
+        <ion-input type="number" placeholder="4" [(ngModel)]="TotalRambahan1[3]" ></ion-input>
+      </div>
+    </ion-col>
+    <ion-col>
+      <div>
+        <ion-input type="number" placeholder="5" [(ngModel)]="TotalRambahan1[4]" ></ion-input>
+      </div>
+    </ion-col>
+    <ion-col>
+      <div>
+        <ion-input type="number" placeholder="6" [(ngModel)]="TotalRambahan1[5]" ></ion-input>
+      </div>
+    </ion-col>
+  </ion-row>
+</ion-grid>
+
+<ion-item>Rambahan 2</ion-item>
+<ion-grid>
+  <ion-row>
+    <ion-col>
+      <div>
+        <ion-input type="number" placeholder="1" [(ngModel)]="TotalRambahan2[0]" ></ion-input>
+      </div>
+    </ion-col>
+    <ion-col>
+      <div>
+        <ion-input type="number" placeholder="2" [(ngModel)]="TotalRambahan2[1]" ></ion-input>
+      </div>
+    </ion-col>
+    <ion-col>
+      <div>
+        <ion-input type="number" placeholder="3" [(ngModel)]="TotalRambahan2[2]" ></ion-input>
+      </div>
+    </ion-col>
+    <ion-col>
+      <div>
+        <ion-input type="number" placeholder="4" [(ngModel)]="TotalRambahan2[3]" ></ion-input>
+      </div>
+    </ion-col>
+    <ion-col>
+      <div>
+        <ion-input type="number" placeholder="5" [(ngModel)]="TotalRambahan2[4]" ></ion-input>
+      </div>
+    </ion-col>
+    <ion-col>
+      <div>
+        <ion-input type="number" placeholder="6" [(ngModel)]="TotalRambahan2[5]" ></ion-input>
+      </div>
+    </ion-col>
+  </ion-row>
+</ion-grid>
+
+<ion-item>Rambahan 3</ion-item>
+<ion-grid>
+  <ion-row>
+    <ion-col>
+      <div>
+        <ion-input type="number" placeholder="1" [(ngModel)]="TotalRambahan3[0]" ></ion-input>
+      </div>
+    </ion-col>
+    <ion-col>
+      <div>
+        <ion-input type="number" placeholder="2" [(ngModel)]="TotalRambahan3[1]" ></ion-input>
+      </div>
+    </ion-col>
+    <ion-col>
+      <div>
+        <ion-input type="number" placeholder="3" [(ngModel)]="TotalRambahan3[2]" ></ion-input>
+      </div>
+    </ion-col>
+    <ion-col>
+      <div>
+        <ion-input type="number" placeholder="4" [(ngModel)]="TotalRambahan3[3]" ></ion-input>
+      </div>
+    </ion-col>
+    <ion-col>
+      <div>
+        <ion-input type="number" placeholder="5" [(ngModel)]="TotalRambahan3[4]" ></ion-input>
+      </div>
+    </ion-col>
+    <ion-col>
+      <div>
+        <ion-input type="number" placeholder="6" [(ngModel)]="TotalRambahan3[5]" ></ion-input>
+      </div>
+    </ion-col>
+  </ion-row>
+</ion-grid>
+
+<ion-item>Rambahan 4</ion-item>
+<ion-grid>
+  <ion-row>
+    <ion-col>
+      <div>
+        <ion-input type="number" placeholder="1" [(ngModel)]="TotalRambahan4[0]" ></ion-input>
+      </div>
+    </ion-col>
+    <ion-col>
+      <div>
+        <ion-input type="number" placeholder="2" [(ngModel)]="TotalRambahan4[1]" ></ion-input>
+      </div>
+    </ion-col>
+    <ion-col>
+      <div>
+        <ion-input type="number" placeholder="3" [(ngModel)]="TotalRambahan4[2]" ></ion-input>
+      </div>
+    </ion-col>
+    <ion-col>
+      <div>
+        <ion-input type="number" placeholder="4" [(ngModel)]="TotalRambahan4[3]" ></ion-input>
+      </div>
+    </ion-col>
+    <ion-col>
+      <div>
+        <ion-input type="number" placeholder="5" [(ngModel)]="TotalRambahan4[4]" ></ion-input>
+      </div>
+    </ion-col>
+    <ion-col>
+      <div>
+        <ion-input type="number" placeholder="6" [(ngModel)]="TotalRambahan4[5]" ></ion-input>
+      </div>
+    </ion-col>
+  </ion-row>
+</ion-grid>
+
+<ion-item>Rambahan 5</ion-item>
+<ion-grid>
+  <ion-row>
+    <ion-col>
+      <div>
+        <ion-input type="number" placeholder="1" [(ngModel)]="TotalRambahan5[0]" ></ion-input>
+      </div>
+    </ion-col>
+    <ion-col>
+      <div>
+        <ion-input type="number" placeholder="2" [(ngModel)]="TotalRambahan5[1]" ></ion-input>
+      </div>
+    </ion-col>
+    <ion-col>
+      <div>
+        <ion-input type="number" placeholder="3" [(ngModel)]="TotalRambahan5[2]" ></ion-input>
+      </div>
+    </ion-col>
+    <ion-col>
+      <div>
+        <ion-input type="number" placeholder="4" [(ngModel)]="TotalRambahan5[3]" ></ion-input>
+      </div>
+    </ion-col>
+    <ion-col>
+      <div>
+        <ion-input type="number" placeholder="5" [(ngModel)]="TotalRambahan5[4]" ></ion-input>
+      </div>
+    </ion-col>
+    <ion-col>
+      <div>
+        <ion-input type="number" placeholder="6" [(ngModel)]="TotalRambahan5[5]" ></ion-input>
+      </div>
+    </ion-col>
+  </ion-row>
+</ion-grid>
+
+<ion-item>Rambahan 6</ion-item>
+<ion-grid>
+  <ion-row>
+    <ion-col>
+      <div>
+        <ion-input type="number" placeholder="1" [(ngModel)]="TotalRambahan6[0]" ></ion-input>
+      </div>
+    </ion-col>
+    <ion-col>
+      <div>
+        <ion-input type="number" placeholder="2" [(ngModel)]="TotalRambahan6[1]" ></ion-input>
+      </div>
+    </ion-col>
+    <ion-col>
+      <div>
+        <ion-input type="number" placeholder="3" [(ngModel)]="TotalRambahan6[2]" ></ion-input>
+      </div>
+    </ion-col>
+    <ion-col>
+      <div>
+        <ion-input type="number" placeholder="4" [(ngModel)]="TotalRambahan6[3]" ></ion-input>
+      </div>
+    </ion-col>
+    <ion-col>
+      <div>
+        <ion-input type="number" placeholder="5" [(ngModel)]="TotalRambahan6[4]" ></ion-input>
+      </div>
+    </ion-col>
+    <ion-col>
+      <div>
+        <ion-input type="number" placeholder="6" [(ngModel)]="TotalRambahan6[5]" ></ion-input>
+      </div>
+    </ion-col>
+  </ion-row>
+</ion-grid>
+</ion-content>

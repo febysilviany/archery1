@@ -1,0 +1,66 @@
+
+<ion-header>
+  <ion-navbar>
+    <ion-title>Edit Profil</ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="closeModal()">
+        <ion-icon name="close"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+ 
+</ion-header>
+
+
+<ion-content padding>
+  <ion-list inset>
+    <!-- <ion-item>
+      <ion-input type="text" placeholder="Email" [(ngModel)]="Email" ></ion-input>
+    </ion-item> -->
+
+    <!-- <ion-item>
+      <ion-input type="password" placeholder="Password" [(ngModel)]="Password" ></ion-input>
+    </ion-item> -->
+
+    <ion-item>
+      <ion-input type="text" placeholder="Nama" [(ngModel)]="Nama" ></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-input type="number" placeholder="Umur (Dalam tahun)" [(ngModel)]="Umur" ></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-input type="number" placeholder="Tinggi Badan (Dalam centimeter)" [(ngModel)]="TinggiBadan" ></ion-input>
+    </ion-item>
+
+    <ion-item >
+      <ion-label>Jenis Busur</ion-label>
+        <ion-select type="text" [(ngModel)]="JenisBusur" >
+          <ion-option value="Recurve Bow">Recurve Bow</ion-option>
+          <ion-option value="Reflex Bow">Reflex Bow</ion-option>
+          <ion-option value="Self Bow">Self Bow</ion-option>
+          <ion-option value="Longbow">Longbow</ion-option>
+          <ion-option value="Flatbow">Flatbow</ion-option>
+          <ion-option value="Composite Bow">Composite Bow</ion-option>
+          <ion-option value="Takedown Bow">Takedown Bow</ion-option>
+          <ion-option value="Compound Bow">Compound Bow</ion-option>
+        </ion-select>
+    </ion-item>
+
+    <ion-item>
+        <ion-input type="number" placeholder="Panjang Busur (Dalam centimeter)" [(ngModel)]="PanjangBusur"></ion-input>
+    </ion-item>
+
+    <ion-item>
+        <ion-input type="number" placeholder="Kekuatan Tarikan Busur (Dalam lbs)" [(ngModel)]="KekuatanBusur"></ion-input>
+    </ion-item>
+
+  </ion-list>
+
+  <div padding>
+    <button ion-button round full (click)="simpanDataDiri()">Simpan</button>
+  </div>
+
+
+</ion-content>

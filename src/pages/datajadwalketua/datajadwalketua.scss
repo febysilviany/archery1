@@ -1,0 +1,23 @@
+page-datajadwalketua {
+    img {
+        max-width: 85%;
+        border: 0;
+        padding-top: 0 px;
+        padding-bottom: 10px;
+    }
+
+    ion-col div {
+        border-radius: 2px;
+        padding: 3px;
+        text-align: center;
+    }
+
+    .grid-basic-page {
+
+        ion-col div {
+          border-radius: 2px;
+          padding: 5px;
+          text-align: left;
+        }
+    }
+}

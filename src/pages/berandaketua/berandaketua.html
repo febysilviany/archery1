@@ -1,0 +1,36 @@
+<ion-header>
+
+    <ion-navbar>
+      <ion-title>Beranda</ion-title>
+      <ion-buttons end>
+        <button ion-button icon-only (click)="notifikasi()">
+          <ion-icon name="notifications"></ion-icon>
+        </button>
+      </ion-buttons>
+    </ion-navbar>
+  
+  </ion-header>
+
+
+<ion-content padding>
+    <ion-grid>
+      <ion-row>
+        <ion-col col-10 push-1>
+          <div>
+            <img src="img/LOGO 2.png"/>
+          </div>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+          <div><img src="img/datanilai1.png" (click)="NilaiAnggota()">Data Nilai Anggota</div>
+        </ion-col>
+        <ion-col>
+          <div><img src="img/dataanggota1.png" (click)="DataKlub()">Data Klub</div>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+</ion-content>

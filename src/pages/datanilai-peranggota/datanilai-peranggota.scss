@@ -1,0 +1,43 @@
+page-datanilai-peranggota {
+    .img-rounded {
+        border-radius: 50%;
+        width: 30px;
+        height: 30px;
+        background-color: black;
+        position: relative;
+        text-align: center;
+        font-size: 1.2em;
+        font-weight: bold;
+        color: #fff;
+    }
+
+    .total {
+        border-radius: 50%;
+        width: 70px;
+        height: 30px;
+        background-color:#019FDC;
+        position: relative;
+        text-align: center;
+        font-size: 1.3em;
+        font-weight: bold;
+        color: #fff;
+    }
+
+    ion-col div {
+        // background-color: #f0f5ff;
+        // border: 1px solid #e6e9ee;
+        //border-radius: 2px;
+        padding: 5px;
+        text-align: center;
+    }
+
+    .peringkat {
+        max-width: 85%;
+        border: 0;
+        padding-top: 5px;
+        padding-bottom: 10px;
+        font-size: 1.3em;
+        
+    }
+
+}

@@ -1,0 +1,44 @@
+
+<ion-header>
+    <ion-navbar>
+      <ion-title> Edit Jadwal Ambil Nilai</ion-title>
+      <ion-buttons end>
+        <button ion-button icon-only (click)="closeModal()">
+          <ion-icon name="close"></ion-icon>
+        </button>
+      </ion-buttons>
+    </ion-navbar>
+   
+  </ion-header>
+  
+  
+  <ion-content padding>
+    <ion-list inset>
+      <ion-item>
+        <ion-label>
+          Tanggal
+        </ion-label>
+        <ion-datetime displayFormat="DD-MM-YYYY" type="text" [(ngModel)]="Tanggal"></ion-datetime>
+      </ion-item>
+  
+      <ion-item>
+        <ion-label>
+          Waktu
+        </ion-label>
+        <ion-datetime displayFormat="HH:mm" type="text" [(ngModel)]="Waktu" ></ion-datetime>
+      </ion-item>
+  
+      <ion-item>
+        <ion-label stacked>
+          Deskripsi
+        </ion-label>
+        <ion-textarea type="text" placeholder="Masukkan deskripsi ..." [(ngModel)]="Deskripsi" ></ion-textarea>
+      </ion-item>
+    </ion-list>
+    <div padding>
+      <button ion-button round full (click)="editjadwalAmbilNilai()">Simpan</button>
+    </div>
+      
+  
+  </ion-content>
+  

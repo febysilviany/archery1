@@ -1,0 +1,78 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Daftar</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-grid>
+     <ion-row>
+       <ion-col col-10 push-1>
+        <div>
+          <img src="img/LOGO 2.png"/>
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <ion-list inset>
+    <ion-list-header style="color: rgb(10, 152, 196);">
+      Data Klub
+    </ion-list-header>
+    <ion-item>
+      <ion-input type="text" placeholder="Nama Klub" [(ngModel)]="NamaKlub" ></ion-input>
+    </ion-item>
+    <br>
+
+    <ion-list-header style="color: rgb(10, 152, 196);">
+        Data Akun
+      </ion-list-header>
+    <ion-item>
+      <ion-input type="text" placeholder="Email" [(ngModel)]="Email" ></ion-input>
+    </ion-item>
+    
+    <ion-item>
+      <ion-input type="password" placeholder="Password" [(ngModel)]="Password" ></ion-input>
+    </ion-item>
+    
+    <ion-item>
+      <ion-input type="text" placeholder="Nama" [(ngModel)]="Nama" ></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-input type="text" placeholder="Umur" [(ngModel)]="Umur" ></ion-input>
+    </ion-item>
+
+  </ion-list>
+
+  <div padding-horizontal>
+    <button ion-button round full (click)="daftarKetua()">Daftar</button>
+  </div>
+
+</ion-content>
+
+  <!-- <form (ngSubmit)="daftarKetuaKlub()" [formGroup]="form">
+    <ion-list inset>
+      <ion-item [ngClass]="{ invalid: emailErrors.hasError('*', ['touched']) }">
+        <ion-input type="text" placeholder="Email" formControlName="email"></ion-input>
+      </ion-item>
+    
+      <div ngxErrors="email" #emailErrors="ngxErrors">
+        <div [ngxError]="['email', 'required']" [when]="['touched', 'dirty']">Isi email dengan benar</div>
+      </div>
+   
+      <ion-item [ngClass]="{ invalid: passwordErrors.hasError('*', ['touched']) }">
+        <ion-input type="password" placeholder="Password" formControlName="password"></ion-input>
+      </ion-item>
+    
+      <div ngxErrors="password" #passwordErrors="ngxErrors">
+        <div [ngxError]="['minlength', 'required']" [when]="['touched']">Password terdiri dari minimal 8 karakter</div>
+      </div>
+    </ion-list>
+    
+    <div padding-horizontal>
+      <div class="form-error">{{signupError}}</div>
+        <button ion-button round full type="submit">Daftar</button>
+    </div>
+  </form> -->
+

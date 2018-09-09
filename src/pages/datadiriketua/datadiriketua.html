@@ -1,0 +1,96 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Profil</ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="option($event)">
+        <ion-icon name="more"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+  <ion-list *ngFor="let data of datadiriList">
+  <ion-grid>
+    <ion-row>
+      <ion-col col-10 push-1>
+        <div>
+          <img class="img-rounded" src="img/feby.JPG" />
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <ion-list-header class="listheader">
+    Data Akun
+  </ion-list-header>
+    
+    <ion-item>
+      <ion-icon name='contact' item-start></ion-icon>
+        Email
+      <ion-note class="note" item-end>{{data.Email}}</ion-note>
+    </ion-item>
+    
+    <ion-item>
+      <ion-icon name='md-key' item-start></ion-icon>
+        Password
+        <button ion-button outline item-end (click)="editPassword(data)">
+          Ubah Password
+        </button>
+      <!-- <ion-note style="color: black;" item-end>{{data.Password}}</ion-note> -->
+    </ion-item>
+    <br>
+
+  <ion-list-header class="listheader">
+    Data Diri
+  </ion-list-header>
+      
+    <ion-item>
+      <ion-icon name='person' item-start></ion-icon>
+         Nama
+      <ion-note class="note" item-end>{{data.Nama}}</ion-note>
+    </ion-item>
+      
+    <ion-item>
+      <ion-icon name='happy' item-start></ion-icon>
+        Umur
+      <ion-note class="note" item-end>{{data.Umur}} tahun</ion-note>
+    </ion-item>
+
+    <ion-item>
+      <ion-icon name='body' item-start></ion-icon>
+        Tinggi Badan
+      <ion-note class="note" item-end>{{data.TinggiBadan}} cm</ion-note>
+    </ion-item>
+    
+    <br>
+    
+    <ion-list-header class="listheader">
+      Data Alat Panahan
+    </ion-list-header>
+      
+    <ion-item>
+      <ion-icon name='arrow-round-forward' item-start></ion-icon>
+        Jenis Busur
+      <ion-note class="note" item-end>{{data.JenisBusur}}</ion-note>
+    </ion-item>
+
+    <ion-item>
+      <ion-icon name='arrow-round-forward' item-start></ion-icon>
+        Panjang Busur
+      <ion-note class="note" item-end>{{data.PanjangBusur}} cm</ion-note>
+    </ion-item>
+      
+    <ion-item>
+      <ion-icon name='arrow-round-forward' item-start></ion-icon>
+        Kekuatan Busur
+       <ion-note class="note" item-end>{{data.KekuatanBusur}} lbs</ion-note>
+    </ion-item>
+    <br>
+    <button ion-button round full (click)="editDataDiri(data)">Edit Data Diri</button>  
+  
+  </ion-list>
+  
+  
+</ion-content>

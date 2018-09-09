@@ -1,0 +1,318 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Nilai Saya</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+  <ion-item>
+    <ion-label>Pilih Bulan</ion-label>
+    <ion-select [(ngModel)]="Tanggal" (ionChange)="loadPerkembangan()">
+      <ion-option value="Januari">Januari</ion-option>
+      <ion-option value="Februari">Februari</ion-option>
+      <ion-option value="Maret">Maret</ion-option>
+      <ion-option value="April">April</ion-option>
+      <ion-option value="Mei">Mei</ion-option>
+      <ion-option value="Juni">Juni</ion-option>
+      <ion-option value="Juli">Juli</ion-option>
+      <ion-option value="Agustus">Agustus</ion-option>
+      <ion-option value="September">September</ion-option>
+      <ion-option value="Oktober">Oktober</ion-option>
+      <ion-option value="November">November</ion-option>
+      <ion-option value="Desember">Desember</ion-option>
+    </ion-select>
+    
+  </ion-item>
+  <br>
+
+  <ion-item>
+    Grafik Perkembangan
+  </ion-item>
+  <div class="row">
+    <div class="col-md-6">
+      <div style="display: block;">
+        <canvas baseChart width="330" height="400"
+          [datasets]="lineChartData"
+          [labels]="lineChartLabels"
+          [options]="lineChartOptions"
+          [colors]="lineChartColors"
+          [legend]="lineChartLegend"
+          [chartType]="lineChartType"
+          (chartHover)="chartHovered($event)"
+          (chartClick)="chartClicked($event)">
+        </canvas>
+      </div>
+    </div>
+  </div>
+
+  <br><br>
+  <ion-item>
+    <ion-label>Hasil Tembakan</ion-label>
+  </ion-item>
+
+  <ion-list>
+    <!-- <ion-list-header>
+      Rambahan 1
+    </ion-list-header> -->
+    <ion-grid>
+      <ion-row >
+        <ion-col>
+          R 1
+        </ion-col>
+        <ion-col>
+          <div class="img-rounded">
+           1
+          </div>
+        </ion-col>
+        <ion-col>
+          <div class="img-rounded">
+            1
+          </div>
+        </ion-col>
+        <ion-col>
+          <div class="img-rounded">
+            1
+          </div>
+        </ion-col>
+        <ion-col>
+          <div class="img-rounded">
+            1
+          </div>
+        </ion-col>
+        <ion-col>
+          <div class="img-rounded">
+            1
+          </div>
+        </ion-col>
+        <ion-col>
+          <div class="img-rounded">
+            1
+          </div>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+    
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+          R 2
+        </ion-col>
+        <ion-col>
+          <div class="img-rounded">
+            1
+          </div>
+        </ion-col>
+        <ion-col>
+          <div class="img-rounded">
+            1
+          </div>
+        </ion-col>
+        <ion-col>
+          <div class="img-rounded">
+            1
+          </div>
+        </ion-col>
+        <ion-col>
+          <div class="img-rounded">
+            1
+          </div>
+        </ion-col>
+        <ion-col>
+          <div class="img-rounded">
+            1
+          </div>
+        </ion-col>
+        <ion-col>
+          <div class="img-rounded">
+            1
+          </div>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+          R 3
+        </ion-col>
+        <ion-col>
+          <div class="img-rounded">
+            1
+          </div>
+        </ion-col>
+        <ion-col>
+          <div class="img-rounded">
+            1
+          </div>
+        </ion-col>
+        <ion-col>
+          <div class="img-rounded">
+            1
+          </div>
+        </ion-col>
+        <ion-col>
+          <div class="img-rounded">
+            1
+          </div>
+        </ion-col>
+        <ion-col>
+          <div class="img-rounded">
+            1
+          </div>
+        </ion-col>
+        <ion-col>
+          <div class="img-rounded">
+            1
+          </div>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+          R 4
+        </ion-col>
+        <ion-col>
+          <div class="img-rounded">
+            1
+          </div>
+        </ion-col>
+        <ion-col>
+          <div class="img-rounded">
+            1
+          </div>
+        </ion-col>
+        <ion-col>
+          <div class="img-rounded">
+            1
+          </div>
+        </ion-col>
+        <ion-col>
+          <div class="img-rounded">
+            1
+          </div>
+        </ion-col>
+        <ion-col>
+          <div class="img-rounded">
+            1
+          </div>
+        </ion-col>
+        <ion-col>
+          <div class="img-rounded">
+            1
+          </div>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  
+
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+          R 5
+        </ion-col>
+        <ion-col>
+          <div class="img-rounded">
+            1
+          </div>
+        </ion-col>
+        <ion-col>
+          <div class="img-rounded">
+            1
+          </div>
+        </ion-col>
+        <ion-col>
+          <div class="img-rounded">
+            1
+          </div>
+        </ion-col>
+        <ion-col>
+          <div class="img-rounded">
+            1
+          </div>
+        </ion-col>
+        <ion-col>
+          <div class="img-rounded">
+            1
+          </div>
+        </ion-col>
+        <ion-col>
+          <div class="img-rounded">
+            1
+          </div>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+
+      <ion-grid>
+        <ion-row>
+          <ion-col>
+            R 6
+          </ion-col>
+          <ion-col>
+            <div class="img-rounded">
+              1
+            </div>
+          </ion-col>
+          <ion-col>
+            <div class="img-rounded">
+              1
+            </div>
+          </ion-col>
+          <ion-col>
+            <div class="img-rounded">
+              1
+            </div>
+          </ion-col>
+          <ion-col>
+            <div class="img-rounded">
+              1
+            </div>
+          </ion-col>
+          <ion-col>
+            <div class="img-rounded">
+              1
+            </div>
+          </ion-col>
+          <ion-col>
+            <div class="img-rounded">
+              1
+            </div>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+
+      <ion-grid>
+        <ion-row>
+          <ion-col col-9>
+            Total Nilai Tembakan
+          </ion-col>
+          <ion-col col-3>
+            <div class="total">
+              360
+            </div>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+  </ion-list>
+
+  <ion-item>
+    Peringkat
+  </ion-item>
+  <ion-grid>
+    <ion-row>
+      <ion-col col-12 push-1>
+        <div class="peringkat">
+        <ion-icon name="ribbon"></ion-icon>
+          5/10
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
