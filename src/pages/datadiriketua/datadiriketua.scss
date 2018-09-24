@@ -1,11 +1,12 @@
 page-datadiriketua {
     .img-rounded {
         border-radius: 50%;
-        width: 140px;
-        height: 140px;
+        width: 150px;
+        height: 150px;
+        padding: 0 !important;
     }
  
-    ion-col div {
+    ion-col {
         //border-radius: 2px;
         border-color : darkturquoise;
         //padding: 3px;

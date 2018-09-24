@@ -4,7 +4,7 @@ import { DatePicker } from '@ionic-native/date-picker';
 import { Nilai } from '../../models/datanilai';
 import { NilaiProvider } from '../../providers/nilai/nilai';
 import { DatanilaiPeranggotaPage } from '../datanilai-peranggota/datanilai-peranggota';
-
+import * as firebase from 'firebase';
 
 @Component({
   selector: 'page-tambah-nilai',
@@ -12,71 +12,22 @@ import { DatanilaiPeranggotaPage } from '../datanilai-peranggota/datanilai-peran
 })
 export class TambahNilaiPage {
   hari_ini :  string;
-  private nilaiList: Nilai[]=[];
+ // private nilaiList: Nilai[]=[];
   private Tanggal: string = "";
-  private TotalRambahan1: number[]=[1,2,3,4,5,6];
+  private TotalRambahan1: number[]=[];
   private TotalRambahan2: number[]=[1,2,3,4,5,6];
   private TotalRambahan3: number[]=[1,2,3,4,5,6];
   private TotalRambahan4: number[]=[1,2,3,4,5,6];
   private TotalRambahan5: number[]=[1,2,3,4,5,6];
   private TotalRambahan6: number[]=[1,2,3,4,5,6];
-
-  //private EmailPengguna: string = "";
-  // TotalRambahan1 = {
-  //   1:20, 
-  //   2:30,
-  //   3:40,
-  //   4:50,
-  //   5:60,
-  //   6:10
-  // };
-  // TotalRambahan2 = {
-  //   1:10,
-  //   2:20,
-  //   3:30,
-  //   4:40,
-  //   5:50,
-  //   6:60
-  // };
-  // TotalRambahan3 = {
-  //   1:20,
-  //   2:30,
-  //   3:40,
-  //   4:50,
-  //   5:60,
-  //   6:10
-  // };
-  // TotalRambahan4 = {
-  //   1:10,
-  //   2:20,
-  //   3:30,
-  //   4:40,
-  //   5:50,
-  //   6:60
-  // };
-  // TotalRambahan5 = {
-  //   1:20,
-  //   2:30,
-  //   3:40,
-  //   4:50,
-  //   5:60,
-  //   6:10
-  // };
-  // TotalRambahan6 = {
-  //   1:10,
-  //   2:20,
-  //   3:30,
-  //   4:40,
-  //   5:50,
-  //   6:60
-  // };
-
-
+  private EmailPengguna;
   constructor(
     public navCtrl: NavController, 
     public navParams: NavParams,
     public toastCtrl:ToastController,
     public nilaiProvider: NilaiProvider) {
+      this.EmailPengguna = firebase.auth().currentUser.email;
+      
   }
 
   
@@ -89,6 +40,7 @@ export class TambahNilaiPage {
     var TotalRambahan5 = this.TotalRambahan5;
     var TotalRambahan6 = this.TotalRambahan6;
 
+
     var data = {
       "Tanggal": this.Tanggal,
       "TotalRambahan1": JSON.stringify(TotalRambahan1),
@@ -97,15 +49,10 @@ export class TambahNilaiPage {
       "TotalRambahan4": JSON.stringify(TotalRambahan4),
       "TotalRambahan5": JSON.stringify(TotalRambahan5),
       "TotalRambahan6": JSON.stringify(TotalRambahan6),
-      //"EmailPengguna": this.EmailPengguna,   
+      "EmailPengguna": this.EmailPengguna,   
     }
     console.log(data);
-    console.log(TotalRambahan1);
-    console.log(TotalRambahan2);
-    console.log(TotalRambahan3);
-    console.log(TotalRambahan4);
-    console.log(TotalRambahan5);
-    console.log(TotalRambahan6);
+
     this.nilaiProvider.tambahNilai(data).subscribe((result)=>{
       console.log(result);
       this.navCtrl.pop();

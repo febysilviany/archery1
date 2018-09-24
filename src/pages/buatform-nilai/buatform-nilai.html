@@ -1,0 +1,33 @@
+
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Form Nilai</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-list inset>
+      <ion-item>
+        <ion-label>
+          Tanggal
+        </ion-label>
+        <ion-datetime displayFormat="DD-MMMM-YYYY" type="text" [(ngModel)]="Tanggal"></ion-datetime>
+      </ion-item>
+  
+      <ion-item >
+        <ion-label>Jenis Nilai</ion-label>
+        <ion-select type="text" [(ngModel)]="JenisNilai" >
+          <ion-option value="Latihan">Nilai Latihan</ion-option>
+          <ion-option value="Pengambilan Nilai">Pengambilan Nilai</ion-option>
+        </ion-select>
+      </ion-item>
+
+    </ion-list>
+
+    <div padding>
+      <button ion-button round full (click)="simpanFormNilai()">Simpan</button>
+    </div>
+</ion-content>

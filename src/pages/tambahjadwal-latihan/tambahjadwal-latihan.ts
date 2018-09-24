@@ -6,7 +6,7 @@ import { JadwalLatihan } from '../../models/datajadwal';
 import { PenggunaProvider } from '../../providers/pengguna/pengguna';
 import { DatajadwalketuaPage } from '../datajadwalketua/datajadwalketua';
 import { JadwalProvider } from '../../providers/jadwal/jadwal';
-
+import * as firebase from 'firebase';
 
 @Component({
   selector: 'page-tambahjadwal-latihan',
@@ -32,11 +32,12 @@ export class TambahjadwalLatihanPage {
   }
 
   simpanJadwalLatihan(){
-    console.log("tambahJadwalLatihan");
+    var Email = firebase.auth().currentUser.email;
     var data = {
       "Tanggal": this.Tanggal,
       "Waktu": this.Waktu,
-      "Deskripsi": this.Deskripsi,    
+      "Deskripsi": this.Deskripsi,
+      "Email": Email
     }
     console.log(data);
     this.jadwalProvider.tambahjadwalLatihan(data).subscribe((result)=>{

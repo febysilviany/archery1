@@ -7,6 +7,7 @@ import { EditdatadiriPage } from '../editdatadiri/editdatadiri';
 import { PopoverController } from 'ionic-angular';
 import { OptionprofilPage } from '../optionprofil/optionprofil';
 import { UbahPasswordPage } from '../ubah-password/ubah-password';
+import * as firebase from 'firebase';
 
 
 @Component({
@@ -15,6 +16,7 @@ import { UbahPasswordPage } from '../ubah-password/ubah-password';
 })
 export class DatadiriketuaPage {
   private datadiriList: Datadiri[]=[];
+  
 
   constructor(
     public popoverCtrl: PopoverController,
@@ -22,6 +24,7 @@ export class DatadiriketuaPage {
     public navParams: NavParams,
     public penggunaProvider:PenggunaProvider,
     public modalCtrl: ModalController) {
+      
   }
 
   ngOnInit(){

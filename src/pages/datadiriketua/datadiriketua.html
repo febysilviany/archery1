@@ -20,6 +20,9 @@
         </div>
       </ion-col>
     </ion-row>
+    <br>
+    <button ion-button round outline color="dark" (click)="editDataDiri(data)">Edit Profil</button>  
+    <br>
   </ion-grid>
 
   <ion-list-header class="listheader">
@@ -35,7 +38,7 @@
     <ion-item>
       <ion-icon name='md-key' item-start></ion-icon>
         Password
-        <button ion-button outline item-end (click)="editPassword(data)">
+        <button ion-button outline item-end color="dark" (click)="editPassword(data)">
           Ubah Password
         </button>
       <!-- <ion-note style="color: black;" item-end>{{data.Password}}</ion-note> -->
@@ -57,40 +60,7 @@
         Umur
       <ion-note class="note" item-end>{{data.Umur}} tahun</ion-note>
     </ion-item>
-
-    <ion-item>
-      <ion-icon name='body' item-start></ion-icon>
-        Tinggi Badan
-      <ion-note class="note" item-end>{{data.TinggiBadan}} cm</ion-note>
-    </ion-item>
     
-    <br>
-    
-    <ion-list-header class="listheader">
-      Data Alat Panahan
-    </ion-list-header>
-      
-    <ion-item>
-      <ion-icon name='arrow-round-forward' item-start></ion-icon>
-        Jenis Busur
-      <ion-note class="note" item-end>{{data.JenisBusur}}</ion-note>
-    </ion-item>
-
-    <ion-item>
-      <ion-icon name='arrow-round-forward' item-start></ion-icon>
-        Panjang Busur
-      <ion-note class="note" item-end>{{data.PanjangBusur}} cm</ion-note>
-    </ion-item>
-      
-    <ion-item>
-      <ion-icon name='arrow-round-forward' item-start></ion-icon>
-        Kekuatan Busur
-       <ion-note class="note" item-end>{{data.KekuatanBusur}} lbs</ion-note>
-    </ion-item>
-    <br>
-    <button ion-button round full (click)="editDataDiri(data)">Edit Data Diri</button>  
-  
   </ion-list>
-  
   
 </ion-content>

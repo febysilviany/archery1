@@ -1,8 +1,12 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams, AlertController, ToastController } from 'ionic-angular';
+import { NavController, NavParams, AlertController, ModalController,ToastController } from 'ionic-angular';
 import { TambahanggotaPage } from '../tambahanggota/tambahanggota';
 import { Datadiri } from '../../models/datadiri';
 import { PenggunaProvider } from '../../providers/pengguna/pengguna';
+import { Klub } from '../../models/dataklub';
+import { KlubProvider } from '../../providers/klub/klub';
+import { EditdataklubPage } from '../editdataklub/editdataklub';
+
 
 @Component({
   selector: 'page-dataklub',
@@ -10,6 +14,7 @@ import { PenggunaProvider } from '../../providers/pengguna/pengguna';
 })
 export class DataklubPage {
   private datadiriList: Datadiri[]=[];
+  private dataklubList: Klub[]=[];
   Nama;
 
   constructor(
@@ -17,7 +22,9 @@ export class DataklubPage {
     public navParams: NavParams,
     public penggunaProvider: PenggunaProvider,
     public alerCtrl:AlertController,
-    public toastCtrl:ToastController
+    public toastCtrl:ToastController,
+    public klubProvider: KlubProvider,
+    public modalCtrl:ModalController
     ) {
     }
 
@@ -28,6 +35,7 @@ export class DataklubPage {
 
   ngOnInit(){
     this.loadPengguna();
+    this.loadDataKlub();
   }
 
   loadPengguna(){
@@ -40,6 +48,16 @@ export class DataklubPage {
     console.log(this.datadiriList);
   }
 
+  loadDataKlub(){
+    this.dataklubList =[];
+    this.klubProvider.loadDataKlub()
+      .subscribe((result)=>{
+        console.log(result);
+        this.dataklubList=result;
+      });
+    console.log(this.dataklubList);
+  }
+
   loadPenggunabyNama(){
     this.datadiriList =[];
     this.penggunaProvider.loadPenggunabyNama(this.Nama)
@@ -50,7 +68,13 @@ export class DataklubPage {
     console.log(this.datadiriList);
   }
 
-
+  editDataKlub(data){
+    var modal  = this.modalCtrl.create(EditdataklubPage, data)
+    modal.onDidDismiss(() => {
+      this.navCtrl.setRoot(DataklubPage);
+    })
+    modal.present();
+  }
 
 
   hapusPengguna(Email){

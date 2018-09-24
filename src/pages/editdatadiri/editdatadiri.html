@@ -14,28 +14,23 @@
 
 <ion-content padding>
   <ion-list inset>
-    <!-- <ion-item>
-      <ion-input type="text" placeholder="Email" [(ngModel)]="Email" ></ion-input>
-    </ion-item> -->
-
-    <!-- <ion-item>
-      <ion-input type="password" placeholder="Password" [(ngModel)]="Password" ></ion-input>
-    </ion-item> -->
-
     <ion-item>
+      <ion-label stacked>Nama</ion-label>
       <ion-input type="text" placeholder="Nama" [(ngModel)]="Nama" ></ion-input>
     </ion-item>
 
     <ion-item>
+      <ion-label stacked>Umur</ion-label>
       <ion-input type="number" placeholder="Umur (Dalam tahun)" [(ngModel)]="Umur" ></ion-input>
     </ion-item>
 
     <ion-item>
+      <ion-label stacked>Tinggi Badan (Dalam centimeter)</ion-label>
       <ion-input type="number" placeholder="Tinggi Badan (Dalam centimeter)" [(ngModel)]="TinggiBadan" ></ion-input>
     </ion-item>
 
     <ion-item >
-      <ion-label>Jenis Busur</ion-label>
+      <ion-label stacked>Jenis Busur</ion-label>
         <ion-select type="text" [(ngModel)]="JenisBusur" >
           <ion-option value="Recurve Bow">Recurve Bow</ion-option>
           <ion-option value="Reflex Bow">Reflex Bow</ion-option>
@@ -49,11 +44,13 @@
     </ion-item>
 
     <ion-item>
-        <ion-input type="number" placeholder="Panjang Busur (Dalam centimeter)" [(ngModel)]="PanjangBusur"></ion-input>
+      <ion-label stacked>Panjang Busur (Dalam centimeter)</ion-label>
+      <ion-input type="number" placeholder="Panjang Busur (Dalam centimeter)" [(ngModel)]="PanjangBusur"></ion-input>
     </ion-item>
 
     <ion-item>
-        <ion-input type="number" placeholder="Kekuatan Tarikan Busur (Dalam lbs)" [(ngModel)]="KekuatanBusur"></ion-input>
+      <ion-label stacked>Kekuatan Tarikan Busur (Dalam lbs)</ion-label>    
+      <ion-input type="number" placeholder="Kekuatan Tarikan Busur (Dalam lbs)" [(ngModel)]="KekuatanBusur"></ion-input>
     </ion-item>
 
   </ion-list>

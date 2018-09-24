@@ -1,0 +1,23 @@
+page-datadiripelatih {
+    .img-rounded {
+        border-radius: 50%;
+        width: 150px;
+        height: 150px;
+        padding: 0 !important;
+    }
+ 
+    ion-col {
+        //border-radius: 2px;
+        border-color : darkturquoise;
+        //padding: 3px;
+        text-align: center;
+    }
+
+    .listheader {
+        color: rgb(10, 152, 196);
+    }
+
+    .note {
+        color: black;
+    }
+}

@@ -6,6 +6,9 @@ import { TabsketuaPage } from '../tabsketua/tabsketua';
 import { DaftarketuaPage } from '../daftarketua/daftarketua';
 import { TabspelatihPage } from '../tabspelatih/tabspelatih';
 import { TabsanggotaPage } from '../tabsanggota/tabsanggota';
+import { ResetPasswordPage } from '../reset-password/reset-password';
+import * as firebase from 'firebase';
+import { AlertController } from 'ionic-angular/components/alert/alert-controller';
 
 @Component({
   selector: 'page-login',
@@ -19,6 +22,7 @@ export class LoginPage {
     public navCtrl: NavController, 
     public navParams: NavParams,
     private auth: AuthService,
+    private alert: AlertController,
     fb: FormBuilder) {
 
       this.loginForm = fb.group({
@@ -64,5 +68,18 @@ export class LoginPage {
     this.navCtrl.push(TabsanggotaPage);
   }
 
+  // resetPassword(Email){
+  //   //this.navCtrl.push(ResetPasswordPage);
+  //   firebase.auth()
+  //     .sendPasswordResetEmail(Email)
+  //     .then(function(){
+  //       console.log("correct");
+  //     })
+  //     .catch(function(error){
+  //       console.log("error");
+  //     })
+  // }
+
+  
 
 }

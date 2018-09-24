@@ -1,0 +1,30 @@
+
+<ion-header>
+    <ion-navbar>
+      <ion-title>Edit Data Klub</ion-title>
+      <ion-buttons end>
+        <button ion-button icon-only (click)="closemodal()">
+          <ion-icon name="close"></ion-icon>
+        </button>
+      </ion-buttons>
+    </ion-navbar>
+   
+  </ion-header>
+  
+  
+  <ion-content padding>
+    <ion-list inset>
+      <ion-item>
+        <ion-label stacked>Nama Klub</ion-label>
+        <ion-input type="text" placeholder="Nama Klub" [(ngModel)]="NamaKlub" ></ion-input>
+      </ion-item>
+  
+    </ion-list>
+  
+    <div padding>
+      <button ion-button round full (click)="simpanDataKlub()">Simpan</button>
+    </div>
+  
+  
+  </ion-content>
+  

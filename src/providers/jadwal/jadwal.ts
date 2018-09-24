@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { Http, Response } from '@angular/http';
 import 'rxjs';
 import { JadwalLatihan } from '../../models/datajadwal';
-
+import * as firebase from 'firebase';
 
 @Injectable()
 export class JadwalProvider {
@@ -13,7 +13,8 @@ export class JadwalProvider {
   }
 
   loadJadwal(){
-    return this.http.get("http://localhost:8081/api/jadwal")
+    var email = firebase.auth().currentUser.email;
+    return this.http.get("http://localhost:8081/api/jadwal/"+email)
       .map((response: Response) => {
         let data = response.json();
         this.datajadwalList = data;

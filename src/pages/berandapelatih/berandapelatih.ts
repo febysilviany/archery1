@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 import { DatanilaiPage } from '../datanilai/datanilai';
 import { DataklubPage } from '../dataklub/dataklub';
+import { DatanilaipelatihPage } from '../datanilaipelatih/datanilaipelatih';
 
 
 
@@ -15,7 +16,7 @@ export class BerandapelatihPage {
   }
 
   NilaiAnggota(){
-    this.navCtrl.push(DatanilaiPage);
+    this.navCtrl.push(DatanilaipelatihPage);
   }
 
   AbsenAnggota(){

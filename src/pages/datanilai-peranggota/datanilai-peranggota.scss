@@ -11,6 +11,12 @@ page-datanilai-peranggota {
         color: #fff;
     }
 
+    .rowNilai {
+        margin-bottom: 0.8em;
+        display: flex;
+        justify-content: space-between;
+    }
+
     .total {
         border-radius: 50%;
         width: 70px;
@@ -23,11 +29,12 @@ page-datanilai-peranggota {
         color: #fff;
     }
 
-    ion-col div {
+    ion-col span {
         // background-color: #f0f5ff;
         // border: 1px solid #e6e9ee;
         //border-radius: 2px;
-        padding: 5px;
+        padding: 4px;
+        margin: 1px;
         text-align: center;
     }
 
@@ -38,6 +45,11 @@ page-datanilai-peranggota {
         padding-bottom: 10px;
         font-size: 1.3em;
         
+    }
+
+    ion-col div {
+        padding: 5px;
+        text-align: center;
     }
 
 }

@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { Http, Response } from '@angular/http';
 import 'rxjs';
 import { Nilai } from '../../models/datanilai';
-
+import * as firebase from 'firebase';
 
 @Injectable()
 export class NilaiProvider {
@@ -13,17 +13,30 @@ export class NilaiProvider {
   }
 
   loadNilai(){
-    return this.http.get("http://localhost:8081/api/nilai")
+    let Email = firebase.auth().currentUser.email;
+    return this.http.get("http://localhost:8081/api/nilaiku/"+Email)
       .map((response: Response) => {
         let data = response.json();
-        for (let elem of data){
-          elem.TotalRambahan1 = elem.TotalRambahan1.split(",");
-          elem.TotalRambahan2 = elem.TotalRambahan2.split(",");
-          elem.TotalRambahan3 = elem.TotalRambahan3.split(",");
-          elem.TotalRambahan4 = elem.TotalRambahan4.split(",");
-          elem.TotalRambahan5 = elem.TotalRambahan5.split(",");
-          elem.TotalRambahan6 = elem.TotalRambahan6.split(",");
-        }
+
+        // let dataInJSON = JSON.parse(data);
+        console.log(data);
+        let newDataStructure = [];
+        newDataStructure.push(JSON.parse(data[0].TotalRambahan1));
+        newDataStructure.push(JSON.parse(data[0].TotalRambahan2));
+        newDataStructure.push(JSON.parse(data[0].TotalRambahan3));
+        newDataStructure.push(JSON.parse(data[0].TotalRambahan4));
+        newDataStructure.push(JSON.parse(data[0].TotalRambahan5));
+        newDataStructure.push(JSON.parse(data[0].TotalRambahan6));
+        return newDataStructure;
+      },
+        (error) => console.log(error)
+      );
+  }
+
+  loadDataNilai(){
+    return this.http.get("http://localhost:8081/api/datanilai")
+      .map((response: Response) => {
+        let data = response.json();
         this.datanilaiList = data;
         return data;
       },
@@ -34,6 +47,12 @@ export class NilaiProvider {
   tambahNilai(data){
     var url = "http://localhost:8081/api/nilai";
     return this.http.post(url, data);
+  }
+
+  getTanggal() {
+    var email = firebase.auth().currentUser.email;
+    var url = "http://localhost:8081/api/nilaiku/tanggal/"+email;
+    return this.http.get(url);
   }
 
 

@@ -9,7 +9,6 @@ import { PenggunaProvider } from '../../providers/pengguna/pengguna';
 })
 export class EditdatadiriPage {
   private Email:  string="";
-  private Password: string="";
   private Nama : string="";
   private Umur: string="";
   private TinggiBadan : string="";
@@ -26,7 +25,6 @@ export class EditdatadiriPage {
     {
       var data = navParams.data;
       this.Email = data.Email;
-      this.Password = data.Password;
       this.Nama = data.Nama;
       this.Umur = data.Umur;
       this.TinggiBadan = data.TinggiBadan;
@@ -42,7 +40,6 @@ export class EditdatadiriPage {
   simpanDataDiri(){
     var data = {
       "Nama" : this.Nama,
-      "Password" : this.Password,
       "Umur" : this.Umur,
       "TinggiBadan" : this.TinggiBadan,
       "JenisBusur" : this.JenisBusur,

@@ -8,8 +8,9 @@
 <ion-content padding>
   <ion-item>
     <ion-label>Pilih Bulan</ion-label>
-    <ion-select [(ngModel)]="Tanggal" (ionChange)="loadPerkembangan()">
-      <ion-option value="Januari">Januari</ion-option>
+    <!-- <ion-select[(ngModel)]="Tanggal" (ionChange)="loadPerkembangan()"></ion-select> -->
+      
+      <!-- <ion-option value="Januari">Januari</ion-option>
       <ion-option value="Februari">Februari</ion-option>
       <ion-option value="Maret">Maret</ion-option>
       <ion-option value="April">April</ion-option>
@@ -20,8 +21,8 @@
       <ion-option value="September">September</ion-option>
       <ion-option value="Oktober">Oktober</ion-option>
       <ion-option value="November">November</ion-option>
-      <ion-option value="Desember">Desember</ion-option>
-    </ion-select>
+      <ion-option value="Desember">Desember</ion-option> 
+    </ion-select>-->
     
   </ion-item>
   <br>
@@ -31,7 +32,7 @@
   </ion-item>
   <div class="row">
     <div class="col-md-6">
-      <div style="display: block;">
+      <div style="display: block;" >
         <canvas baseChart width="330" height="400"
           [datasets]="lineChartData"
           [labels]="lineChartLabels"
@@ -52,241 +53,56 @@
   </ion-item>
 
   <ion-list>
-    <!-- <ion-list-header>
-      Rambahan 1
-    </ion-list-header> -->
+
     <ion-grid>
+      <ion-row *ngFor="let nilais of datanilaiList; let i = index" >
+        <ion-col class="rowNilai">
+          R {{i+1}}
+            <span class="img-rounded" *ngFor="let n of nilais">
+                {{n}}
+            </span>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+
+    <!-- <ion-grid >
       <ion-row >
-        <ion-col>
-          R 1
+        <ion-col >
+          R 6
         </ion-col>
         <ion-col>
           <div class="img-rounded">
-           1
+            {{data.TotalRambahan6[0]}}
           </div>
         </ion-col>
         <ion-col>
           <div class="img-rounded">
-            1
+            {{data.TotalRambahan6[1]}}
           </div>
         </ion-col>
         <ion-col>
           <div class="img-rounded">
-            1
+            {{data.TotalRambahan6[2]}}
           </div>
         </ion-col>
         <ion-col>
           <div class="img-rounded">
-            1
+            {{data.TotalRambahan6[3]}}
           </div>
         </ion-col>
         <ion-col>
           <div class="img-rounded">
-            1
+            {{data.TotalRambahan6[4]}}
           </div>
         </ion-col>
         <ion-col>
           <div class="img-rounded">
-            1
-          </div>
-        </ion-col>
-      </ion-row>
-    </ion-grid>
-
-    
-    <ion-grid>
-      <ion-row>
-        <ion-col>
-          R 2
-        </ion-col>
-        <ion-col>
-          <div class="img-rounded">
-            1
-          </div>
-        </ion-col>
-        <ion-col>
-          <div class="img-rounded">
-            1
-          </div>
-        </ion-col>
-        <ion-col>
-          <div class="img-rounded">
-            1
-          </div>
-        </ion-col>
-        <ion-col>
-          <div class="img-rounded">
-            1
-          </div>
-        </ion-col>
-        <ion-col>
-          <div class="img-rounded">
-            1
-          </div>
-        </ion-col>
-        <ion-col>
-          <div class="img-rounded">
-            1
+            {{data.TotalRambahan6[5]}}
           </div>
         </ion-col>
       </ion-row>
-    </ion-grid>
-
-
-    <ion-grid>
-      <ion-row>
-        <ion-col>
-          R 3
-        </ion-col>
-        <ion-col>
-          <div class="img-rounded">
-            1
-          </div>
-        </ion-col>
-        <ion-col>
-          <div class="img-rounded">
-            1
-          </div>
-        </ion-col>
-        <ion-col>
-          <div class="img-rounded">
-            1
-          </div>
-        </ion-col>
-        <ion-col>
-          <div class="img-rounded">
-            1
-          </div>
-        </ion-col>
-        <ion-col>
-          <div class="img-rounded">
-            1
-          </div>
-        </ion-col>
-        <ion-col>
-          <div class="img-rounded">
-            1
-          </div>
-        </ion-col>
-      </ion-row>
-    </ion-grid>
-
-
-    <ion-grid>
-      <ion-row>
-        <ion-col>
-          R 4
-        </ion-col>
-        <ion-col>
-          <div class="img-rounded">
-            1
-          </div>
-        </ion-col>
-        <ion-col>
-          <div class="img-rounded">
-            1
-          </div>
-        </ion-col>
-        <ion-col>
-          <div class="img-rounded">
-            1
-          </div>
-        </ion-col>
-        <ion-col>
-          <div class="img-rounded">
-            1
-          </div>
-        </ion-col>
-        <ion-col>
-          <div class="img-rounded">
-            1
-          </div>
-        </ion-col>
-        <ion-col>
-          <div class="img-rounded">
-            1
-          </div>
-        </ion-col>
-      </ion-row>
-    </ion-grid>
-  
-
-    <ion-grid>
-      <ion-row>
-        <ion-col>
-          R 5
-        </ion-col>
-        <ion-col>
-          <div class="img-rounded">
-            1
-          </div>
-        </ion-col>
-        <ion-col>
-          <div class="img-rounded">
-            1
-          </div>
-        </ion-col>
-        <ion-col>
-          <div class="img-rounded">
-            1
-          </div>
-        </ion-col>
-        <ion-col>
-          <div class="img-rounded">
-            1
-          </div>
-        </ion-col>
-        <ion-col>
-          <div class="img-rounded">
-            1
-          </div>
-        </ion-col>
-        <ion-col>
-          <div class="img-rounded">
-            1
-          </div>
-        </ion-col>
-      </ion-row>
-    </ion-grid>
-
-
-      <ion-grid>
-        <ion-row>
-          <ion-col>
-            R 6
-          </ion-col>
-          <ion-col>
-            <div class="img-rounded">
-              1
-            </div>
-          </ion-col>
-          <ion-col>
-            <div class="img-rounded">
-              1
-            </div>
-          </ion-col>
-          <ion-col>
-            <div class="img-rounded">
-              1
-            </div>
-          </ion-col>
-          <ion-col>
-            <div class="img-rounded">
-              1
-            </div>
-          </ion-col>
-          <ion-col>
-            <div class="img-rounded">
-              1
-            </div>
-          </ion-col>
-          <ion-col>
-            <div class="img-rounded">
-              1
-            </div>
-          </ion-col>
-        </ion-row>
-      </ion-grid>
+    </ion-grid> -->
 
       <ion-grid>
         <ion-row>
@@ -295,7 +111,7 @@
           </ion-col>
           <ion-col col-3>
             <div class="total">
-              360
+              {{jumlahNilai}}
             </div>
           </ion-col>
         </ion-row>

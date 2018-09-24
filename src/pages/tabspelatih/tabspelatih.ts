@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 import { BerandapelatihPage } from '../berandapelatih/berandapelatih';
 import { DatajadwalpelatihPage } from '../datajadwalpelatih/datajadwalpelatih';
-import { DatadiriketuaPage } from '../datadiriketua/datadiriketua';
+import { DatadiriketuapelatihPage } from '../datadiriketuapelatih/datadiriketuapelatih';
 
 
 
@@ -14,7 +14,7 @@ export class TabspelatihPage {
 
   tab1Root = BerandapelatihPage;
   tab2Root = DatajadwalpelatihPage;
-  tab3Root = DatadiriketuaPage;
+  tab3Root = DatadiriketuapelatihPage;
 
   constructor() {
 

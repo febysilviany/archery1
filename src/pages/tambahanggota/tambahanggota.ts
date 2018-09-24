@@ -5,6 +5,8 @@ import { PenggunaProvider } from '../../providers/pengguna/pengguna';
 import { DataklubPage } from '../dataklub/dataklub';
 import { AuthService } from '../../services/auth.service';
 import { LoginPage } from '../login/login';
+import * as firebase from 'firebase';
+
 
 
 @Component({
@@ -17,11 +19,11 @@ export class TambahanggotaPage {
   private Nama: string = "";
   private Email: string = "";
   private Password: string = "";
-  private Umur: string = "";
-  private TinggiBadan: string = "";
-  private JenisBusur: string = "";
-  private PanjangBusur: string = "";
-  private KekuatanBusur: string = "";
+  // private Umur: string = "";
+  // private TinggiBadan: string = "";
+  // private JenisBusur: string = "";
+  // private PanjangBusur: string = "";
+  // private KekuatanBusur: string = "";
 
 
   constructor(
@@ -55,21 +57,23 @@ export class TambahanggotaPage {
   // }
 
   tambahAnggota(){
-    let data = {
+    // var Email = firebase.auth().currentUser.email;
+    var data = {
       "Status": this.Status,
       "Nama": this.Nama,
       "Email": this.Email,
-      "Umur": this.Umur,
-      "TinggiBadan": this.TinggiBadan,
-      "JenisBusur": this.JenisBusur,
-      "PanjangBusur": this.PanjangBusur,
-      "KekuatanBusur": this.KekuatanBusur,
-    };
+      // "Umur": this.Umur,
+      // "TinggiBadan": this.TinggiBadan,
+      // "JenisBusur": this.JenisBusur,
+      // "PanjangBusur": this.PanjangBusur,
+      // "KekuatanBusur": this.KekuatanBusur,
+    }
+    console.log(data);
 		this.auth.daftarPelatihAnggota(this.Email, this.Password).then(
 			(newUser) => {
-        data['FirebaseUID'] = newUser.user.uid
+        data['FirebaseUID'] = newUser.user.uid;
         this.penggunaProvider.tambahPengguna(data).subscribe((result)=>{
-          this.navCtrl.setRoot(DataklubPage)
+          this.navCtrl.setRoot(DataklubPage);
         });
       }
     );

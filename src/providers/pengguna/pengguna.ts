@@ -2,14 +2,15 @@ import { Injectable } from '@angular/core';
 import { Http, Response } from '@angular/http';
 import 'rxjs';
 import { Datadiri } from '../../models/datadiri'; 
+import * as firebase from 'firebase';
 
 @Injectable()
 export class PenggunaProvider {
   private datadiriList : Datadiri[] = [];
-
+  private Email;
   firebaseUidKetua;
+  
   constructor(public http: Http) {
-    
   }
 
   cekStatus(){
@@ -18,7 +19,7 @@ export class PenggunaProvider {
   }
 
   loadPenggunabyNama(Nama: string){
-    return this.http.get("http://localhost:8081/api/NamaPengguna/" +Nama+ "/pengguna")
+    return this.http.get("http://localhost:8081/api/NamaPengguna/" +Nama)
       .map((response: Response) => {
         let data = response.json();
         this.datadiriList = data;
@@ -29,7 +30,9 @@ export class PenggunaProvider {
   }
 
   loadPengguna(){
-    return this.http.get("http://localhost:8081/api/pengguna")
+    console.log('test');
+    let email = firebase.auth().currentUser.email;
+    return this.http.get("http://localhost:8081/api/pengguna/"+email)
       .map((response: Response) => {
         let data = response.json();
         this.datadiriList = data;
@@ -45,7 +48,7 @@ export class PenggunaProvider {
   }
 
   tambahPengguna(data){
-    var url = "http://localhost:8081/api/pengguna";
+    var url = "http://localhost:8081/api/tambahpengguna";
     return this.http.post(url, data);
   }
 
@@ -56,6 +59,11 @@ export class PenggunaProvider {
 
   editDataDiri(Email, data){
     var url = "http://localhost:8081/api/pengguna/" + Email;
+    return this.http.post(url, data);
+  }
+
+  editDataKetuaPelatih(Email, data){
+    var url = "http://localhost:8081/api/editdataketuapelatih/" + Email;
     return this.http.post(url, data);
   }
 

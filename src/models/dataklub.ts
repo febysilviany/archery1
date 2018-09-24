@@ -1,7 +1,8 @@
 export class Klub {
     constructor(
-        public ID_Klub: string ="",
-        public NamaKlub: string = ""
+        public IDKlub: string ="",
+        public NamaKlub: string = "",
+        public Email: string=""
         ) {
     }
 }

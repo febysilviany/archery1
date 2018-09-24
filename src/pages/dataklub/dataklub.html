@@ -1,5 +1,4 @@
 <ion-header>
-
   <ion-navbar>
     <ion-title>Data Klub</ion-title>
     <ion-buttons end>
@@ -8,12 +7,25 @@
       </button>
     </ion-buttons>
   </ion-navbar>
-
 </ion-header>
 
 
 <ion-content padding>
+  <ion-list *ngFor="let data of dataklubList">
+    <ion-list-header class="listheader">
+      Data Klub
+    </ion-list-header>
+        
+    <ion-item (click)="editDataKlub(data)">
+      <ion-icon name='people' item-start></ion-icon>
+        Nama Klub
+      <ion-note class="note" item-end>{{data.NamaKlub}}</ion-note>
+    </ion-item>
+
+  </ion-list>
+
   <ion-searchbar (ionInput)="loadPenggunabyNama()"></ion-searchbar>
+
   <ion-list no-lines>
     <ion-item *ngFor="let data of datadiriList">
       <ion-avatar item-start>
@@ -24,12 +36,4 @@
     </ion-item>
   </ion-list>
 
-  <!-- <ion-item *ngFor="let data of datadiriList">
-    <ion-avatar item-start>
-      <ion-icon name="ios-contact" item-end></ion-icon>
-    </ion-avatar>
-    <h2>{{data.Nama}}</h2>
-    <p>{{data.Umur}}</p>
-    <button ion-button clear item-end (click)="hapusPengguna(data.Email)">Hapus</button>
-  </ion-item> -->
 </ion-content>

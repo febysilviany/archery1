@@ -2,11 +2,11 @@
 <ion-header>
     <ion-navbar>
       <ion-title> Jadwal Latihan</ion-title>
-      <ion-buttons end>
+      <!-- <ion-buttons end>
         <button ion-button icon-only (click)="simpanJadwalLatihan()">
           <ion-icon name="checkmark"></ion-icon>
         </button>
-      </ion-buttons>
+      </ion-buttons> -->
     </ion-navbar>
    
   </ion-header>
@@ -35,6 +35,10 @@
         <ion-textarea type="text" placeholder="Masukkan deskripsi ..." [(ngModel)]="Deskripsi" ></ion-textarea>
       </ion-item>
     </ion-list>
+
+    <div padding>
+      <button ion-button round full (click)="simpanJadwalLatihan()">Simpan</button>
+    </div>
   
   </ion-content>
   

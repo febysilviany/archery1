@@ -18,6 +18,7 @@ export class DaftarketuaPage {
   // signupError: string;
   // form: FormGroup;
   private datadiriList: Datadiri[]=[];
+  private NamaKlub: string;
   private Status: string;
   private Nama: string = "";
   private Email: string = "";
@@ -62,14 +63,16 @@ export class DaftarketuaPage {
       "Status": this.Status,
       "Nama": this.Nama,
       "Email": this.Email,
-      "Umur": this.Umur 
+      "Umur": this.Umur,
+      "NamaKlub": this.NamaKlub 
     };
 		this.auth.daftarKetua(this.Email, this.Password).then(
 			(ketua) => {
         localStorage.setItem('firebaseUidKetua', ketua.user.uid);
         data['FirebaseUID'] = ketua.user.uid;
         this.penggunaProvider.daftarKetua(data).subscribe((result)=>{
-              
+          this.navCtrl.setRoot(LoginPage);
+          this.auth.logout();
         });
       }
     );

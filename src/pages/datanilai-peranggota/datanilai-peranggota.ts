@@ -4,20 +4,20 @@ import { Nilai } from '../../models/datanilai';
 import { NilaiProvider } from '../../providers/nilai/nilai';
 
 
-
 @Component({
   selector: 'page-datanilai-peranggota',
   templateUrl: 'datanilai-peranggota.html',
 })
 export class DatanilaiPeranggotaPage {
   private datanilaiList: Nilai[]=[];
-  
-
+  private jumlahNilai: number;
+  private totalRambahan: Array<any>;
   constructor(
     public navCtrl: NavController, 
     public navParams: NavParams,
     public nilaiProvider:NilaiProvider
   ) {
+    this.loadTanggal();
   }
 
   ngOnInit(){
@@ -28,17 +28,26 @@ export class DatanilaiPeranggotaPage {
     this.datanilaiList =[];
     this.nilaiProvider.loadNilai()
       .subscribe((result)=>{
-        console.log(result);
+        let sum = 0;
+        let rambahan = [];
+        result.map(re => {
+          let ram = 0;
+          re.map((r, i) => {
+            sum+=Number(r);
+            ram+=Number(r);
+          });
+          rambahan.push(ram);
+        })
+        this.totalRambahan = rambahan;
+        this.jumlahNilai = sum;
         this.datanilaiList=result;
       });
     console.log(this.datanilaiList);
   }
   
   public lineChartData : Array<any> = [
-    {data: [65, 59, 80, 81, 56, 55, 40], label: 'Latihan Pertama'},
-    {data: [28, 48, 40, 19, 86, 27, 90], label: 'Latihan Kedua'},
-    {data: [18, 48, 77, 9, 100, 27, 40], label: 'Latihan Ketiga'},
-    {data: [81, 70, 60, 50, 90, 40, 70], label: 'Pengambilan Nilai'}
+    {data: [6,7,8,9,10,8], label: 'Latihan Pertama'}
+    // {data: [1,2,3,4,5,6], label: 'Latihan Kedua'},
   ];
   public lineChartLabels:Array<any> = ['R1', 'R2', 'R3', 'R4', 'R5', 'R6'];
   public lineChartOptions:any = {
@@ -109,6 +118,13 @@ export class DatanilaiPeranggotaPage {
   
   public chartHovered(e:any):void {
     console.log(e);
+  }
+
+  public loadTanggal() {
+    // console.log('aw');
+    this.nilaiProvider.getTanggal().subscribe(res => {
+      // console.log(res.json());
+    });
   }
 
 }

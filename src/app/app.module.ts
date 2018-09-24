@@ -25,13 +25,14 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 
 import { ChartsModule } from 'ng2-charts';
 
+
 //Tabs
 import { TabsanggotaPage } from '../pages/tabsanggota/tabsanggota';
 import { TabsketuaPage } from '../pages/tabsketua/tabsketua';
 import { TabspelatihPage } from '../pages/tabspelatih/tabspelatih';
 
 
-//Pages (Ketua Klub)
+//Pages 
 import { LoginPage } from '../pages/login/login';
 import { DaftarketuaPage } from '../pages/daftarketua/daftarketua';
 import { BerandaketuaPage } from '../pages/berandaketua/berandaketua';
@@ -42,12 +43,6 @@ import { DataklubPage } from '../pages/dataklub/dataklub';
 import { TambahanggotaPage } from '../pages/tambahanggota/tambahanggota';
 import { TambahjadwalLatihanPage } from '../pages/tambahjadwal-latihan/tambahjadwal-latihan';
 import { EditjadwalLatihanPage } from '../pages/editjadwal-latihan/editjadwal-latihan';
-
-
-//Providers
-import { JadwalProvider } from '../providers/jadwal/jadwal';
-import { PenggunaProvider } from '../providers/pengguna/pengguna';
-import { KlubProvider } from '../providers/klub/klub';
 import { EditdatadiriPage } from '../pages/editdatadiri/editdatadiri';
 import { BerandapelatihPage } from '../pages/berandapelatih/berandapelatih';
 import { DatajadwalpelatihPage } from '../pages/datajadwalpelatih/datajadwalpelatih';
@@ -61,6 +56,24 @@ import { OptionprofilPage } from '../pages/optionprofil/optionprofil';
 import { NilaiProvider } from '../providers/nilai/nilai';
 import { CekStatusPage } from '../pages/cek-status/cek-status';
 import { UbahPasswordPage } from '../pages/ubah-password/ubah-password';
+import { DatadirianggotaPage } from '../pages/datadirianggota/datadirianggota';
+import { DatadiripelatihPage } from '../pages/datadiripelatih/datadiripelatih';
+
+
+
+//Providers
+import { JadwalProvider } from '../providers/jadwal/jadwal';
+import { PenggunaProvider } from '../providers/pengguna/pengguna';
+import { KlubProvider } from '../providers/klub/klub';
+import { EditdataketuapelatihPage } from '../pages/editdataketuapelatih/editdataketuapelatih';
+import { DatadiriketuapelatihPage } from '../pages/datadiriketuapelatih/datadiriketuapelatih';
+import { DatanilaiketuaPage } from '../pages/datanilaiketua/datanilaiketua';
+import { DatanilaipelatihPage } from '../pages/datanilaipelatih/datanilaipelatih';
+import { BuatformNilaiPage } from '../pages/buatform-nilai/buatform-nilai';
+import { EditdataklubPage } from '../pages/editdataklub/editdataklub';
+import { ResetPasswordPage } from '../pages/reset-password/reset-password';
+
+
 
 
 @NgModule({
@@ -95,7 +108,16 @@ import { UbahPasswordPage } from '../pages/ubah-password/ubah-password';
     DatanilaiPeranggotaPage,
     OptionprofilPage,
     CekStatusPage,
-    UbahPasswordPage
+    UbahPasswordPage,
+    DatadirianggotaPage,
+    DatadiripelatihPage,
+    EditdataketuapelatihPage,
+    DatadiriketuapelatihPage,
+    DatanilaiketuaPage,
+    DatanilaipelatihPage,
+    BuatformNilaiPage,
+    EditdataklubPage,
+    ResetPasswordPage
   ],
   imports: [
     BrowserModule,
@@ -139,7 +161,16 @@ import { UbahPasswordPage } from '../pages/ubah-password/ubah-password';
     DatanilaiPeranggotaPage,
     OptionprofilPage,
     CekStatusPage,
-    UbahPasswordPage
+    UbahPasswordPage,
+    DatadirianggotaPage,
+    DatadiripelatihPage,
+    EditdataketuapelatihPage,
+    DatadiriketuapelatihPage,
+    DatanilaiketuaPage,
+    DatanilaipelatihPage,
+    BuatformNilaiPage,
+    EditdataklubPage,
+    ResetPasswordPage
   ],
   providers: [
     StatusBar,

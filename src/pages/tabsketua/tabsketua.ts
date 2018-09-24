@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { BerandaketuaPage } from '../berandaketua/berandaketua';
 import { DatajadwalketuaPage } from '../datajadwalketua/datajadwalketua';
-import { DatadiriketuaPage } from '../datadiriketua/datadiriketua';
+import { DatadiriketuapelatihPage } from '../datadiriketuapelatih/datadiriketuapelatih';
 
 
 @Component({
@@ -12,7 +12,7 @@ export class TabsketuaPage {
 
   tab1Root = BerandaketuaPage;
   tab2Root = DatajadwalketuaPage;
-  tab3Root = DatadiriketuaPage;
+  tab3Root = DatadiriketuapelatihPage;
 
   constructor() {
 
